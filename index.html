@@ -1,109 +1,179 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
+ <!DOCTYPE html>
+<html lang="fr" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>رحالا - بوابتك للسفر الفاخر InCruises وعالم أرفيا للجمال والعناية</title>
+    <title>Rahala 🌍 | Voyage & Arvea Nature</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f6f9;
+        * {
+            box-sizing: border-box;
             margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f4c81, #2193b0);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             padding: 20px;
-            text-align: center;
             color: #333;
         }
-        .container {
-            max-width: 600px;
-            background: white;
-            padding: 30px;
-            margin: 20px auto;
-            border-radius: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        .card-container {
+            background: #ffffff;
+            width: 100%;
+            max-width: 520px;
+            border-radius: 24px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            animation: fadeIn 0.8s ease-in-out;
         }
-        h1 {
-            color: #0077b6;
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .header {
+            background: linear-gradient(135deg, rgba(27, 73, 101, 0.9), rgba(98, 182, 203, 0.9)), url('https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=600&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 34px;
             margin-bottom: 5px;
-            font-size: 30px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
-        .subtitle {
-            color: #555;
-            font-size: 16px;
-            margin-bottom: 25px;
-            line-height: 1.5;
-        }
-        .card {
-            background: #eef7ff;
-            border: 2px solid #0077b6;
-            padding: 20px;
-            border-radius: 15px;
-            margin-bottom: 20px;
-            text-align: right;
-        }
-        .card h2 {
-            color: #03045e;
+        .header h1 span {
             font-size: 20px;
-            margin-top: 0;
-            margin-bottom: 10px;
+            opacity: 0.95;
+            display: block;
+            margin-top: 5px;
         }
-        .card p {
-            color: #444;
+        .header p {
             font-size: 15px;
+            opacity: 0.95;
+            line-height: 1.4;
+            margin-top: 10px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+        .content {
+            padding: 25px;
+        }
+        .service-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 22px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-4px);
+        }
+        .service-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+        .service-info {
+            padding: 18px;
+        }
+        .service-info h2 {
+            color: #1b4965;
+            font-size: 19px;
+            margin-bottom: 8px;
+        }
+        .service-info p {
+            color: #555;
+            font-size: 14px;
             line-height: 1.6;
-            margin: 0;
+        }
+        .product-list {
+            margin-top: 10px;
+            padding-right: 15px;
+            font-size: 13px;
+            color: #444;
+        }
+        .product-list li {
+            margin-bottom: 4px;
         }
         .highlight {
-            color: #b78103;
+            color: #b5838d;
             font-weight: bold;
         }
-        .btn {
-            display: inline-block;
+        .whatsapp-btn {
+            display: block;
             background-color: #25d366;
             color: white;
-            padding: 14px 25px;
-            font-size: 18px;
-            text-decoration: none;
-            border-radius: 10px;
+            text-align: center;
+            padding: 15px;
+            font-size: 17px;
             font-weight: bold;
-            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+            text-decoration: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transition: background 0.3s, transform 0.2s;
             margin-top: 15px;
-            transition: 0.3s;
         }
-        .btn:hover {
-            background-color: #1ebe5d;
+        .whatsapp-btn:hover {
+            background-color: #20ba5a;
+            transform: scale(1.02);
         }
-        footer {
-            margin-top: 25px;
-            font-size: 13px;
-            color: #777;
+        .footer {
+            text-align: center;
+            padding: 15px;
+            font-size: 12px;
+            color: #888;
+            background: #f1f3f5;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>رحالا 🌍</h1>
-        <p class="subtitle">بوابتك الشاملة للسفر الفاخر عبر البحار وعالم الجمال والعناية المتكاملة.</p>
-        
-        <!-- قسم إنكروزس (محايد للجميع، أزواج وعائلات) -->
-        <div class="card">
-            <h2>🚢 رحالا والسفر الفاخر (InCruises)</h2>
-            <p>اكتشفوا معنا أروع الرحلات البحرية حول العالم على أفخم السفن السياحية. سواء كنتم أفراداً، أزواجاً، أو عائلات؛ تعلموا كيف تسافرون بتكاليف أقل أو مجاناً، وانضموا إلى <span class="highlight">فريقنا وعضويتنا</span> لتحقيق حلم السفر الاستثماري.</p>
+    <div class="card-container">
+        <!-- رأس الصفحة -->
+        <div class="header">
+            <h1>Rahala 🌍 <span>رحالا</span></h1>
+            <p>Voyage de Luxe & Produits Naturels Arvea</p>
         </div>
 
-        <!-- قسم أرفيا (جمالي للنساء وللرجل أيضاً نصيبه) -->
-        <div class="card">
-            <h2>🌿 رحالا والجمال الطبيعي (Arvea)</h2>
-            <p>أجود منتجات العناية الشخصية والجمال التي تبرز أناقة وإشراقة المرأة، مع تشكيلة واسعة مخصصة لتلبية احتياجات الرجل العصرية. احصلوا على منتجاتكم المفضلة أو انضموا إلينا وابدأوا <span class="highlight">مشروعكم الخاص ضمن فريقنا</span> بكل دعم واحترافية.</p>
+        <div class="content">
+            <!-- قسم إنكروزس -->
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1599640842225-85d111c60e6b?auto=format&fit=crop&w=600&q=80" alt="Voyage de Luxe" class="service-img">
+                <div class="service-info">
+                    <h2>🚢 Croisières de Luxe (InCruises)</h2>
+                    <p>Découvrez les plus belles croisières du monde à bord de navires d'exception. Apprenez à voyager à moindre coût et rejoignez <span class="highlight">notre club exclusif</span>.</p>
+                </div>
+            </div>
+
+            <!-- قسم أرفيا مع ذكر المنتجات الحقيقية -->
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80" alt="Arvea Nature" class="service-img">
+                <div class="service-info">
+                    <h2>🌿 Beauté & Soins (Arvea Nature)</h2>
+                    <p>Découvrez notre sélection de produits phares pour prendre soin de vous, de votre peau et de vos cheveux :</p>
+                    <ul class="product-list">
+                        <li>☀️ <strong>Écran Solaire Invisible SPF 50+</strong> (Protection optimale)</li>
+                        <li>✨ <strong>Crème Miracle & Sérum Hydra-Deep</strong></li>
+                        <li>🧴 <strong>Gamme de soins et parfums</strong> pour Femmes et Hommes</li>
+                    </ul>
+                    <p style="margin-top: 8px;">Commandez vos produits ou rejoignez <span class="highlight">notre équipe</span>.</p>
+                </div>
+            </div>
+
+            <p style="text-align: center; font-size: 14px; color: #666; margin-bottom: 10px;">Pour toute commande ou information :</p>
+            
+            <a href="https://wa.me/213794896424" class="whatsapp-btn" target="_blank">Contactez-nous sur WhatsApp 📲</a>
         </div>
 
-        <p style="margin-top: 20px; font-size: 15px; color: #333;">للاستفسار، طلب المنتجات، أو الانضمام إلى الفريق في InCruises أو Arvea، تواصلوا معنا مباشرة:</p>
-        
-        <a href="https://wa.me/213794896424" class="btn" target="_blank">تواصل عبر واتساب للاشتراك والاستفسار</a>
-        
-        <footer>
-            جميع الحقوق محفوظة لموقع رحالا © 2026
-        </footer>
+        <div class="footer">
+            Tous droits réservés - Rahala © 2026
+        </div>
     </div>
 
 </body>

@@ -1,10 +1,33 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rahala Deals 🌍 | Voyage & Arvea Nature</title>
+    <title>Rahala Deals 🌍 | Voyage & Business</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Rahala Deals - Voyages de luxe avec InCruises et produits naturels Arvea. Contactez-nous sur WhatsApp.">
+    <meta name="keywords" content="voyage, croisière, InCruises, Arvea, membre voyageur, partenaire business, beauté">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Rahala Deals 🌍 | Voyage & Business">
+    <meta property="og:description" content="Voyages de Luxe (InCruises) & Produits Arvea. Contactez-nous sur WhatsApp.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=600&q=80">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌍</text></svg>">
+
     <style>
+        :root {
+            --primary: #0f4c81;
+            --secondary: #1976d2;
+            --accent: #2193b0;
+            --coral: #ff7675;
+            --gold: #f39c12;
+            --dark: #1e272e;
+            --light: #f7f9fa;
+        }
         * {
             box-sizing: border-box;
             margin: 0;
@@ -12,7 +35,7 @@
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0f4c81, #2193b0);
+            background: linear-gradient(135deg, #134e5e 0%, #71b280 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -21,11 +44,11 @@
             color: #333;
         }
         .card-container {
-            background: #ffffff;
+            background: var(--light);
             width: 100%;
-            max-width: 520px;
-            border-radius: 24px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            max-width: 540px;
+            border-radius: 28px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
             overflow: hidden;
             animation: fadeIn 0.8s ease-in-out;
         }
@@ -34,42 +57,315 @@
             to { opacity: 1; transform: translateY(0); }
         }
         .header {
-            background: linear-gradient(135deg, rgba(27, 73, 101, 0.9), rgba(98, 182, 203, 0.9)), url('https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=600&q=80');
+            position: relative;
+            background: 
+                linear-gradient(135deg, rgba(15, 76, 129, 0.9), rgba(33, 147, 176, 0.85)),
+                url('https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=600&q=80');
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 40px 20px;
+            padding: 45px 20px 55px;
             text-align: center;
         }
         .header h1 {
             font-size: 34px;
+            font-weight: 800;
             margin-bottom: 5px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 0 3px 6px rgba(0,0,0,0.4);
+            letter-spacing: 0.5px;
         }
         .header h1 span {
-            font-size: 20px;
+            font-size: 19px;
+            font-weight: 500;
             opacity: 0.95;
             display: block;
             margin-top: 5px;
         }
         .header p {
-            font-size: 15px;
+            font-size: 14.5px;
             opacity: 0.95;
-            line-height: 1.4;
+            line-height: 1.5;
             margin-top: 10px;
             text-shadow: 0 1px 3px rgba(0,0,0,0.3);
         }
-        .content {
-            padding: 25px;
+        .header-wave {
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 35px;
+            display: block;
         }
+        .content {
+            padding: 24px 20px 22px;
+        }
+        .section-eyebrow {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin: 8px 0 12px;
+            color: var(--primary);
+            opacity: 0.8;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        /* تصميم البطاقات بتأثيرات فخمة */
         .service-card {
-            background: #f8f9fa;
-            border-radius: 15px;
+            display: block;
+            text-decoration: none;
+            background: #ffffff;
+            border-radius: 20px;
             overflow: hidden;
-            margin-bottom: 22px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+            box-shadow: 0 8px 20px rgba(15, 76, 129, 0.08);
             text-align: left;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
+            border-top: 6px solid var(--card-accent, var(--accent));
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 14px 28px rgba(15, 76, 129, 0.16);
+        }
+        
+        .card-voyageur   { --card-accent: #06AED5; }
+        .card-partner    { --card-accent: #f39c12; }
+        .card-presentation { --card-accent: #ff7675; }
+        .card-arvea      { --card-accent: #06D6A0; }
+
+        .service-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .service-card:hover .service-img {
+            transform: scale(1.03);
+        }
+        .service-info {
+            padding: 20px;
+        }
+        .service-info h2 {
+            color: var(--dark);
+            font-size: 18.5px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--card-accent, var(--accent));
+            color: white;
+            font-size: 15px;
+            flex-shrink: 0;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+        }
+        .service-info p {
+            color: #57606f;
+            font-size: 13.5px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        .features-list {
+            margin-top: 8px;
+            padding-left: 2px;
+            font-size: 13px;
+            color: #2f3542;
+            line-height: 1.7;
+            list-style: none;
+        }
+        .features-list li {
+            margin-bottom: 6px;
+            position: relative;
+            padding-left: 16px;
+        }
+        .features-list li::before {
+            content: "▪";
+            position: absolute;
+            left: 0;
+            color: var(--card-accent, var(--accent));
+            font-weight: bold;
+        }
+        .click-hint {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--card-accent, var(--accent));
+            font-weight: 700;
+        }
+        .click-hint::after {
+            content: "➔";
+            font-size: 12px;
+        }
+        /* الأزرار الداخلية */
+        .card-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 14px;
+        }
+        .card-actions .whatsapp-btn-small {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            flex: 1;
+            background: linear-gradient(135deg, #25d366, #1cb055);
+            color: white;
+            padding: 11px;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+            transition: transform 0.2s;
+        }
+        .action-btn-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            flex: 1;
+            background: linear-gradient(135deg, var(--card-accent, var(--accent)), var(--primary));
+            color: #ffffff;
+            padding: 11px;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(15, 76, 129, 0.2);
+            transition: transform 0.2s;
+        }
+        .card-actions a:hover {
+            transform: translateY(-2px);
+        }
+        .whatsapp-main-btn {
+            display: block;
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            color: white;
+            text-align: center;
+            padding: 16px;
+            font-size: 16.5px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 16px;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-top: 16px;
+        }
+        .whatsapp-main-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+        }
+        .footer {
+            text-align: center;
+            padding: 15px;
+            font-size: 12px;
+            color: #718093;
+            background: #eef2f3;
+            border-top: 1px solid #dcdde1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card-container">
+        <!-- رأس الصفحة -->
+        <div class="header">
+            <h1>Rahala Deals 🌍 <span>رحالا دييلز</span></h1>
+            <p>Voyage de Luxe (InCruises) &amp; Produits Arvea</p>
+            <svg class="header-wave" viewBox="0 0 500 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,20 C100,45 150,0 250,15 C350,30 400,0 500,20 L500,40 L0,40 Z" fill="#f7f9fa"></path>
+            </svg>
+        </div>
+
+        <div class="content">
+
+            <div class="section-eyebrow">✨ Club de Voyage InCruises</div>
+
+            <!-- القسم الأول: InCruises - عضو مسافر -->
+            <div class="service-card card-voyageur">
+                <img src="https://images.unsplash.com/photo-1599640842225-85d111c60e6b?auto=format&fit=crop&w=600&q=80" alt="Membre Voyageur InCruises" class="service-img" loading="lazy">
+                <div class="service-info">
+                    <h2><span class="icon-badge">🚢</span> InCruises : Membre Voyageur</h2>
+                    <p>Profitez de vacances de luxe à prix réduits avec une plateforme dédiée :</p>
+                    <ul class="features-list">
+                        <li><strong>Plateforme exclusive</strong> pour suivre et réserver tous vos circuits.</li>
+                        <li><strong>Réduction dès 25%</strong> sur plus de <strong>21 000 destinations</strong> (Croisières).</li>
+                        <li><strong>17% de réduction</strong> sur plus de <strong>33 000 hôtels</strong> dans le monde.</li>
+                        <li>Formules disponibles : <strong>Classic &amp; Premium</strong>.</li>
+                    </ul>
+                    <div class="card-actions">
+                        <a href="https://wa.me/213794896424?text=Bonjour,%20je%20suis%20intéressé(e)%20par%20l'offre%20Membre%20Voyageur%20(Classic%20ou%20Premium)." class="whatsapp-btn-small" target="_blank" rel="noopener noreferrer">📲 WhatsApp</a>
+                        <a href="https://faithin.incruises.com" class="action-btn-link" target="_blank" rel="noopener noreferrer">🎫 S'inscrire</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- القسم الثاني: InCruises - شريك ومسوق -->
+            <div class="service-card card-partner">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" alt="Partenaire Business InCruises" class="service-img" loading="lazy">
+                <div class="service-info">
+                    <h2><span class="icon-badge">💼</span> InCruises : Partenaire / Business</h2>
+                    <p>Développez votre propre entreprise dans le tourisme et créez des revenus scalables :</p>
+                    <ul class="features-list">
+                        <li><strong>Certificat officiel</strong> signé par InCruises pour chaque membre partenaire.</li>
+                        <li><strong>Plateforme exclusive</strong> dédiée aux partenaires business.</li>
+                        <li>Opportunité de bâtir votre équipe et de voyager gratuitement.</li>
+                        <li>Formules disponibles : <strong>Classic &amp; Premium</strong>.</li>
+                    </ul>
+                    <a href="https://wa.me/213794896424?text=Bonjour,%20je%20suis%20intéressé(e)%20par%20l'opportunité%20Partenaire%20(Classic%20ou%20Premium)." class="whatsapp-btn-small" target="_blank" rel="noopener noreferrer" style="display: block; width: 100%; margin-top: 10px;">📲 Contactez-nous sur WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- القسم الثالث: طلب عرض تقديمي Presentation -->
+            <a href="https://wa.me/213794896424?text=Bonjour,%20je%20souhaite%20assister%20à%20une%20présentation%20pour%20comprendre%20les%20options." class="service-card card-presentation" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80" alt="Présentation InCruises" class="service-img" loading="lazy">
+                <div class="service-info">
+                    <h2><span class="icon-badge">📊</span> Demander une Présentation</h2>
+                    <p>Besoin d'explications sur les formules ? Demandez votre rendez-vous explicatif personnalisé.</p>
+                    <span class="click-hint">Réserver ma Présentation sur WhatsApp</span>
+                </div>
+            </a>
+
+            <div class="section-eyebrow" style="margin-top: 24px;">🌿 Beauté &amp; Soins Naturels</div>
+
+            <!-- القسم الرابع: منتجات أرفيا (مع صورة امرأة من الخلف بشعر طويل) -->
+            <a href="https://wa.me/213794896424?text=Bonjour,%20je%20suis%20intéressé(e)%20par%20les%20produits%20Arvea%20Nature%20et%20la%20commande." class="service-card card-arvea" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                <!-- صورة امرأة من الخلف تعتني بشعرها الطويل -->
+                <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=600&q=80" alt="Soins capillaires et beauté Arvea Nature" class="service-img" loading="lazy">
+                <div class="service-info">
+                    <h2><span class="icon-badge">🌿</span> Beauté &amp; Soins (Arvea Nature)</h2>
+                    <p>Sublimez votre beauté au naturel avec nos produits phares :</p>
+                    <ul class="features-list">
+                        <li><strong>Écran Solaire SPF 50+</strong> &amp; <strong>Crème Miracle</strong>.</li>
+                        <li>Soins capillaires, de la peau et parfums de haute qualité.</li>
+                    </ul>
+                    <span class="click-hint">Je veux commander des produits Arvea ou rejoindre l'équipe</span>
+                </div>
+            </a>
+
+            <!-- زر واتساب عام إضافي -->
+            <a href="https://wa.me/213794896424?text=Bonjour,%20je%20viens%20de%20votre%20site%20Rahala%20Deals%20et%20je%20souhaite%20plus%20d'informations." class="whatsapp-main-btn" target="_blank" rel="noopener noreferrer">Contactez-nous sur WhatsApp 📲</a>
+        </div>
+
+        <div class="footer">
+            Tous droits réservés - Rahala Deals © 2026
+        </div>
+    </div>
+
+</body>
+</html>
         }
         .service-card:hover {
             transform: translateY(-4px);

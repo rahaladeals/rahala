@@ -12,7 +12,6 @@
     <!-- Open Graph / Réseaux sociaux -->
     <meta property="og:title" content="Rahala Deals 🌍 | Voyage & Business">
     <meta property="og:description" content="Voyage de Luxe (InCruises) & Produits Arvea. Contactez-nous sur WhatsApp.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=600&q=80">
     <meta property="og:type" content="website">
 
     <!-- Favicon -->
@@ -21,4 +20,267 @@
     <style>
         :root {
             --coral: #FF6B5B;
-            --sun: #FFB627;  
+            --sun: #FFB627;
+            --ocean: #06AED5;
+            --mint: #06D6A0;
+            --deep: #0B3D52;
+            --cream: #FFFBF4;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(160deg, var(--coral) 0%, var(--sun) 38%, var(--ocean) 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: #333;
+        }
+        .card-container {
+            background: var(--cream);
+            width: 100%;
+            max-width: 540px;
+            border-radius: 26px;
+            box-shadow: 0 20px 45px rgba(11, 61, 82, 0.35);
+            overflow: hidden;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .header {
+            position: relative;
+            background:
+                linear-gradient(135deg, rgba(255,107,91,0.88), rgba(255,182,39,0.55), rgba(6,174,213,0.9)),
+                url('https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=600&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 44px 20px 58px;
+            text-align: center;
+            overflow: hidden;
+        }
+        .header::before {
+            content: "✦";
+            position: absolute;
+            top: 18px;
+            left: 22px;
+            font-size: 20px;
+            opacity: 0.8;
+            color: #FFE8A3;
+        }
+        .header::after {
+            content: "✦";
+            position: absolute;
+            top: 30px;
+            right: 28px;
+            font-size: 14px;
+            opacity: 0.7;
+            color: #FFE8A3;
+        }
+        .header-eyebrow {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            opacity: 0.92;
+            margin-bottom: 8px;
+        }
+        .header h1 {
+            font-size: 36px;
+            font-weight: 800;
+            letter-spacing: -0.01em;
+            margin-bottom: 6px;
+            text-shadow: 0 2px 14px rgba(255, 182, 39, 0.55), 0 2px 6px rgba(0,0,0,0.35);
+        }
+        .header p {
+            font-size: 15px;
+            font-weight: 600;
+            opacity: 0.98;
+            line-height: 1.5;
+            margin-top: 10px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+        .header-wave {
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 34px;
+            display: block;
+        }
+        .content {
+            padding: 22px 20px 20px;
+        }
+        .section-eyebrow {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin: 4px 0 10px;
+            color: var(--deep);
+            opacity: 0.55;
+        }
+        .service-card {
+            display: block;
+            text-decoration: none;
+            background: #ffffff;
+            border-radius: 18px;
+            overflow: hidden;
+            margin-bottom: 18px;
+            box-shadow: 0 6px 16px rgba(11, 61, 82, 0.1);
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
+            border-top: 5px solid var(--accent, var(--ocean));
+            cursor: pointer;
+        }
+        .service-card:hover,
+        .service-card:focus-visible {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(11, 61, 82, 0.18);
+        }
+        .service-card:focus-visible {
+            outline: 2px solid var(--deep);
+            outline-offset: 2px;
+        }
+        .card-voyageur   { --accent: var(--ocean); }
+        .card-partner    { --accent: var(--sun); }
+        .card-presentation { --accent: var(--coral); }
+        .card-arvea      { --accent: var(--mint); }
+
+        .img-wrap {
+            position: relative;
+        }
+        .img-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: linear-gradient(135deg, var(--sun), var(--coral));
+            color: #fff;
+            font-size: 11px;
+            font-weight: 800;
+            padding: 6px 12px;
+            border-radius: 999px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            letter-spacing: 0.02em;
+            z-index: 2;
+        }
+        .service-visual {
+            width: 100%;
+            height: 150px;
+            display: block;
+        }
+        .service-info {
+            padding: 18px;
+        }
+        .service-info h2 {
+            color: var(--deep);
+            font-size: 18px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .icon-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--accent, var(--ocean));
+            font-size: 15px;
+            flex-shrink: 0;
+        }
+        .service-info p {
+            color: #556;
+            font-size: 13px;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+        .features-list {
+            margin-top: 8px;
+            padding-left: 4px;
+            font-size: 12.5px;
+            color: #445;
+            line-height: 1.7;
+            list-style: none;
+        }
+        .features-list li {
+            margin-bottom: 5px;
+        }
+        .click-hint {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            margin-top: 10px;
+            font-size: 11.5px;
+            color: var(--accent, var(--ocean));
+            font-weight: 700;
+        }
+        .click-hint::after {
+            content: "→";
+            font-size: 13px;
+        }
+        .card-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+        }
+        .card-actions .whatsapp-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            flex: 1;
+            padding: 10px 12px;
+            font-size: 12.5px;
+            box-shadow: none;
+            margin-top: 0;
+        }
+        .email-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            background: linear-gradient(135deg, var(--accent, var(--ocean)), var(--deep));
+            color: #ffffff;
+            padding: 10px 12px;
+            font-size: 12.5px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            flex: 1;
+        }
+        .email-btn:hover,
+        .email-btn:focus-visible {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(11, 61, 82, 0.25);
+        }
+        .whatsapp-btn {
+            display: block;
+            background: linear-gradient(135deg, #25d366, #1cb055);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 14px;
+            box-shadow: 0 6px 18px rgba(37, 211, 102, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-top: 14px;
+        }
+        .whatsapp-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 22px rgba(37, 211, 102, 0.5);
+        }
+        .f
